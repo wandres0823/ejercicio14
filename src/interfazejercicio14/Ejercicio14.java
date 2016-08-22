@@ -36,6 +36,7 @@ public class Ejercicio14 extends javax.swing.JFrame {
         cmdPagar = new javax.swing.JButton();
         txtTotal = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        cmdBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +73,14 @@ public class Ejercicio14 extends javax.swing.JFrame {
         jLabel3.setText("con oferta sabiendo que el primer dia quedar en 100.000");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 370, -1));
 
+        cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,7 +97,7 @@ public class Ejercicio14 extends javax.swing.JFrame {
 
     private void cmdPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPagarActionPerformed
         String re;
-        double nqh,estadia;
+        long nqh,estadia;
         
         
          if(txtNumeroD.getText().isEmpty()){
@@ -101,7 +110,7 @@ public class Ejercicio14 extends javax.swing.JFrame {
        
         
 
-        nqh=Double.parseDouble(txtNumeroD.getText());
+        nqh=Long.parseLong(txtNumeroD.getText());
         estadia=(nqh-1)*(200000+100000);
         
         re =String.valueOf(estadia);
@@ -125,6 +134,14 @@ public class Ejercicio14 extends javax.swing.JFrame {
         
  
     }//GEN-LAST:event_txtNumeroDKeyTyped
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        txtNumeroD.setText("");
+        
+        txtTotal.setText("");
+        
+        txtNumeroD.requestFocusInWindow();
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,6 +179,7 @@ public class Ejercicio14 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
     private javax.swing.JButton cmdPagar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
